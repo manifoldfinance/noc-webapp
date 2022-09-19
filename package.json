@@ -17,16 +17,23 @@
   "author": "Max Böck",
   "license": "MIT",
   "dependencies": {
-    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy": "^2.0.0-canary.15",
     "@11ty/eleventy-plugin-rss": "^1.0.7",
-    "clean-css": "^4.2.3",
+    "11ty-plugin-pwa": "^2.0.0",
+    "clean-css": "^5.3.1",
     "cross-env": "^7.0.2",
     "del-cli": "^3.0.0",
-    "dotenv": "^8.2.0",
+    "dotenv": "^16.0.2",
     "eleventy-plugin-pwa": "^1.0.8",
-    "htmlnano": "^0.2.5",
+    "htmlnano": "^2.0.2",
     "luxon": "^1.22.0",
-    "markdown-it": "^10.0.0",
-    "markdown-it-anchor": "^5.2.5"
+    "markdown-it": "^13.0.1",
+    "markdown-it-anchor": "^8.6.5"
+  },
+  "devDependencies": {
+    "cssnano": "^5.1.13",
+    "prettier": "^2.7.1",
+    "sass": "^1.54.9",
+    "svgo": "^2.8.0"
   }
 }

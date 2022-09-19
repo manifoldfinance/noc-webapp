@@ -4,6 +4,6 @@
 */
 
 /* editor inserts an extra div wrapper in the post body. */
-.content > [class^="css-"] > * + * {
-    margin-top: 1em;
+.content > [class^='css-'] > * + * {
+  margin-top: 1em;
 }

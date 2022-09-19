@@ -12,7 +12,7 @@ ol {
 }
 
 li + li {
-    margin-top:.25em;
+  margin-top: 0.25em;
 }
 
 /* Remove default margin */
@@ -58,7 +58,7 @@ select {
 
 /* hide elements */
 [hidden] {
-    display: none;
+  display: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

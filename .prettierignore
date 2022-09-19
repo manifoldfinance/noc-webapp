@@ -1,0 +1,6 @@
+dist/
+build/
+*.min.js
+*.json
+*.svg
+*.xml
