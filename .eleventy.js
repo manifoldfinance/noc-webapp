@@ -1,8 +1,16 @@
+// @ts-check
+/**
+ * @type {import('@11ty/eleventy')}
+ */
 const pluginRss = require('@11ty/eleventy-plugin-rss');
+const pluginNavigation = require("@11ty/eleventy-navigation");
 const pluginPWA = require('11ty-plugin-pwa');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
+const fs = require("fs");
+const path = require("path");
 
+//const ampPlugin = require('@ampproject/eleventy-plugin-amp');
 const filters = require('./eleventy/filters.js');
 const transforms = require('./eleventy/transforms.js');
 
@@ -17,19 +25,40 @@ const workboxOptions = {
 
 require('dotenv').config();
 
-module.exports = function (config) {
+
+//module.exports = function (eleventyConfig) {
+
+
+module.exports = function (eleventyConfig) {
+  eleventyConfig.addFilter("encodeURIComponent", function (str) {
+    return encodeURIComponent(str);
+  });
+
+
+  eleventyConfig.addFilter("readableDate", (dateObj) => {
+    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
+      "dd LLL yyyy"
+    );
+  });
+
+  // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
+  eleventyConfig.addFilter("htmlDateString", (dateObj) => {
+    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
+  });
+
   // Plugins
-  config.addPlugin(pluginRss);
-  config.addPlugin(pluginPWA, workboxOptions);
+  eleventyConfig.addPlugin(pluginRss)
+  eleventyConfig.addPlugin(pluginPWA, workboxOptions);
 
   // Filters
   Object.keys(filters).forEach((filterName) => {
-    config.addFilter(filterName, filters[filterName]);
+    eleventyConfig.addFilter(filterName, filters[filterName]);
   });
+  eleventyConfig.addFilter('json', (obj) => JSON.stringify(obj, null, 2));
 
   // Transform
   Object.keys(transforms).forEach((transformName) => {
-    config.addTransform(transformName, transforms[transformName]);
+    eleventyConfig.addTransform(transformName, transforms[transformName]);
   });
 
   // Markdown
@@ -43,22 +72,28 @@ module.exports = function (config) {
     permalinkClass: 'anchor',
     permalinkSymbol: '#',
   });
-  config.setLibrary('md', mdlib);
+  eleventyConfig.setLibrary('md', mdlib);
 
   // Layouts
-  config.addLayoutAlias('base', 'base.njk');
-  config.addLayoutAlias('post', 'post.njk');
+  eleventyConfig.addLayoutAlias('base', 'base.njk');
+  eleventyConfig.addLayoutAlias('post', 'post.njk');
 
   // Pass-through files
-  config.addPassthroughCopy('admin');
-  config.addPassthroughCopy('src/email');
-  config.addPassthroughCopy('src/static');
-  config.addPassthroughCopy('src/robots.txt');
+  eleventyConfig.addPassthroughCopy('admin');
+  eleventyConfig.addPassthroughCopy('src/email');
+  eleventyConfig.addPassthroughCopy('src/static');
+  eleventyConfig.addPassthroughCopy('src/robots.txt');
 
   // Deep-Merge
-  config.setDataDeepMerge(true);
+  eleventyConfig.setDataDeepMerge(true);
 
-  // Base Config
+  // Base eleventyConfig
+  eleventyComputed: {
+    eleventyNavigation: {
+      key: (/** @type {{ title: any; }} */ data) => data.title;
+      parent: (/** @type {{ parent: any; }} */ data) => data.parent;
+    }
+  }
   return {
     dir: {
       input: 'src',

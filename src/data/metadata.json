@@ -1,0 +1,25 @@
+{
+    "title": "SecureRpc",
+    "url": "https://securerpc.com",
+    "domain": "securerpc.com",
+    "description": "SecureRpc",
+    "genre": "Insert a schema.org genre",
+    "sendWebVitals": false,
+    "feed": {
+      "subtitle": "SecureRpc Status Feed",
+      "filename": "feed.xml",
+      "path": "/feed/feed.xml",
+      "id": "https://securerpc.com"
+    },
+    "jsonfeed": {
+      "path": "/feed/feed.json",
+      "url": "https://securerpc.com/feed/feed.json"
+    },
+    "author": {
+      "name": "Manifold Finance",
+      "twitterHandle": "foldfinance"
+    },
+    "publisher": {
+      "name": "CommodityStream, Inc."
+    }
+  }
