@@ -19,6 +19,7 @@
   "dependencies": {
     "@11ty/eleventy": "^2.0.0-canary.15",
     "@11ty/eleventy-plugin-rss": "^1.0.7",
+    "@ampproject/toolbox-optimizer": "^2.9.0",
     "11ty-plugin-pwa": "^2.0.0",
     "clean-css": "^5.3.1",
     "cross-env": "^7.0.2",
