@@ -1,8 +1,8 @@
 {
-  "name": "eleventy-site",
+  "name": "www-alert-sos",
   "private": true,
   "version": "0.0.0",
-  "description": "A boilerplate for emergency information websites",
+  "description": "webapp for alerting and  emergency information distribution",
   "scripts": {
     "env": "npm run clean && cross-env ELEVENTY_ENV=production eleventy",
     "debug": "DEBUG=* eleventy",
@@ -18,7 +18,8 @@
     "watch": "npx @11ty/eleventy --watch",
     "serve": "npx @11ty/eleventy --serve",
     "prod": "NODE_ENV=production npm run build",
-    "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
+    "bench": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
+    "lighthouse": "lhci autorun"
   },
   "repository": {
     "type": "git",
@@ -46,5 +47,20 @@
     "prettier": "^2.7.1",
     "sass": "^1.54.9",
     "svgo": "^2.8.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.3%",
+      "not dead",
+      "not op_mini all",
+      "not IE > 0",
+      "not samsung 4",
+      "not and_uc 12.12"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

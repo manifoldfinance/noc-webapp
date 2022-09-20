@@ -3,9 +3,9 @@ const { META_TITLE, META_URL, META_DESC, META_LANG, META_COLOR, META_EMAIL, META
   process.env;
 
 module.exports = {
-  title: META_TITLE || 'Emergency Site',
+  title: META_TITLE || 'Alert',
   url: META_URL || '',
-  description: META_DESC || 'An emergency information website.',
+  description: META_DESC || 'Incident Alert and Notification Service',
   lang: META_LANG || 'en',
   primaryColor: META_COLOR || '#DB0000',
   email: META_EMAIL || undefined,
