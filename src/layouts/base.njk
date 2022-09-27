@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +13,7 @@
         {% include "meta.njk" %}
 
     <link rel="canonical" href="{{ metadata.url }}{{ canonicalUrl or page.url }}">
+    
     <!-- 
          This is a blog and so it SHOULD be safe and it is nice for the web
          to send referrers cross-origin.
@@ -23,7 +22,17 @@
          https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
      -->
     <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <!-- RSS Feeds -->
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
+    <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
+    
+<script type="module">
+  import {onCLS, onFID, onLCP} from 'https://unpkg.com/web-vitals/dist/web-vitals.attribution.js?module';
+  onCLS(console.log);
+  onFID(console.log);
+  onLCP(console.log);
+</script>
 
     </head>
     <body class="site">
