@@ -44,7 +44,9 @@
   },
   "devDependencies": {
     "cssnano": "^5.1.13",
+    "gh-pages": "^4.0.0",
     "prettier": "^2.7.1",
+    "release-it": "^15.4.2",
     "sass": "^1.54.9",
     "svgo": "^2.8.0"
   },
