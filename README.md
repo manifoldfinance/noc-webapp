@@ -2,7 +2,9 @@
 
 ## Motivation
 
-> GitHub cannot issue a CVE for this Security Advisory as it does not originate from the official repository for the software against which a CVE is being requested. At this time, we only support package maintainers requesting CVEs from the official package repository.
+> GitHub cannot issue a CVE for this Security Advisory as it does not originate from the official
+> repository for the software against which a CVE is being requested. At this time, we only support
+> package maintainers requesting CVEs from the official package repository.
 
 ## Overview
 

@@ -3,12 +3,12 @@
  * @type {import('@11ty/eleventy')}
  */
 const pluginRss = require('@11ty/eleventy-plugin-rss');
-const pluginNavigation = require("@11ty/eleventy-navigation");
+const pluginNavigation = require('@11ty/eleventy-navigation');
 const pluginPWA = require('11ty-plugin-pwa');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
 
 //const ampPlugin = require('@ampproject/eleventy-plugin-amp');
 const filters = require('./eleventy/filters.js');
@@ -25,29 +25,24 @@ const workboxOptions = {
 
 require('dotenv').config();
 
-
 //module.exports = function (eleventyConfig) {
 
-
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addFilter("encodeURIComponent", function (str) {
+  eleventyConfig.addFilter('encodeURIComponent', function (str) {
     return encodeURIComponent(str);
   });
 
-
-  eleventyConfig.addFilter("readableDate", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(
-      "dd LLL yyyy"
-    );
+  eleventyConfig.addFilter('readableDate', (dateObj) => {
+    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('dd LLL yyyy');
   });
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-  eleventyConfig.addFilter("htmlDateString", (dateObj) => {
-    return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
+  eleventyConfig.addFilter('htmlDateString', (dateObj) => {
+    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
   });
 
   // Plugins
-  eleventyConfig.addPlugin(pluginRss)
+  eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginPWA, workboxOptions);
 
   // Filters

@@ -1,7 +1,4 @@
-importScripts(
-    'https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js'
-  );
-
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js');
 
 workbox.core.setCacheNameDetails({
   prefix: 'securerpc.com',
@@ -12,5 +9,4 @@ workbox.precaching.precacheAndRoute([]);
 
 workbox.googleAnalytics.initialize({});
 
-workbox.skipWaiting()
-
+workbox.skipWaiting();

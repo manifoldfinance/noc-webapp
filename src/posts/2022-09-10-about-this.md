@@ -7,9 +7,9 @@ In case of emergency, many organizations need a quick way to publish critical in
 CMS websites are often unable to handle sudden spikes in traffic, and local infrastructure might be
 damaged, leaving people with poor mobile connections.
 
-Designed to  withstand large amounts of traffic and will work in extreme conditions. It is built on the
-[rule of least power](https://en.wikipedia.org/wiki/Rule_of_least_power), using simple technologies
-for maximum resilience.
+Designed to withstand large amounts of traffic and will work in extreme conditions. It is built on
+the [rule of least power](https://en.wikipedia.org/wiki/Rule_of_least_power), using simple
+technologies for maximum resilience.
 
 ## Features
 
@@ -18,4 +18,3 @@ for maximum resilience.
 - Basic Styling for Accessibility
 - One Request, Inlined CSS
 - Offline Support with Service Worker
-
