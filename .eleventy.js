@@ -12,8 +12,7 @@ const path = require('path');
 const { exec, spawn } = require('node:child_process');
 const util = require('util');
 
-
-const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 
 //const ampPlugin = require('@ampproject/eleventy-plugin-amp');
 const filters = require('./eleventy/filters.js');
@@ -96,14 +95,21 @@ module.exports = function (eleventyConfig) {
     }
   }
   const git_hash = () => {
-    const rev = fs.readFileSync('.git/HEAD').toString().trim().split(/.*[: ]/).slice(-1)[0];
+    const rev = fs
+      .readFileSync('.git/HEAD')
+      .toString()
+      .trim()
+      .split(/.*[: ]/)
+      .slice(-1)[0];
     if (rev.indexOf('/') === -1) {
-        return rev;
+      return rev;
     } else {
-        return fs.readFileSync('.git/' + rev).toString().trim();
+      return fs
+        .readFileSync('.git/' + rev)
+        .toString()
+        .trim();
     }
-
-}
+  };
 
   return {
     dir: {

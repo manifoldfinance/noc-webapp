@@ -1,8 +1,8 @@
 {
-  "name": "www-alert-sos",
+  "name": "noc-webservice",
   "private": true,
-  "version": "0.0.0",
-  "description": "webapp for alerting and  emergency information distribution",
+  "version": "0.0.1",
+  "description": "NOC webapp for alerting and  emergency information distribution",
   "scripts": {
     "env": "npm run clean && cross-env ELEVENTY_ENV=production eleventy",
     "debug": "DEBUG=* eleventy",
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/$OWNER/$REPO"
+    "url": "http://github.com/manifoldfinance/noc-webapp"
   },
   "dependencies": {
     "@11ty/eleventy": "^2.0.0-canary.15",

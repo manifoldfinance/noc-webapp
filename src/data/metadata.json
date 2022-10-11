@@ -1,19 +1,19 @@
 {
-    "title": "Manifold Finance InSights",
+    "title": "Manifold Finance Network Operations Center Alerts",
     "url": "https://insights.manifoldfinance.com",
     "domain": "manifoldfinance.com",
-    "description": "Manifold Finance nSights Feed",
+    "description": "NOC Alerts and RSS Feed",
     "genre": "Insert a schema.org genre",
     "sendWebVitals": false,
     "feed": {
-      "subtitle": "Manifold Finance Insights and Status Feed",
+      "subtitle": "NOC Alerts and Status Feed",
       "filename": "feed.xml",
       "path": "/feed/feed.xml",
-      "id": "https://manifoldfinance.com"
+      "id": "https://noc.manifoldfinance.com"
     },
     "jsonfeed": {
       "path": "/feed/feed.json",
-      "url": "https://manifoldfinance.com/feed/feed.json"
+      "url": "https://noc.manifoldfinance.com/feed/feed.json"
     },
     "author": {
       "name": "Manifold Finance",
