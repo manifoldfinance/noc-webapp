@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>{%- if title -%}{{ title }} | {{ meta.title }}{%- else -%}{{ meta.title }}{%- endif -%}</title>
-        
+
         {%- set css -%}{% include "inline-css.njk" %}{%- endset -%}
         <style>{{ css | cssmin | safe }}</style>
 
@@ -26,7 +26,8 @@
     <!-- RSS Feeds -->
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
-    
+    <link rel="alternate" type="application/rss+xml" href="{{ site.url }}/feed.xml" />
+
 <script type="module">
   import {onCLS, onFID, onLCP} from 'https://unpkg.com/web-vitals/dist/web-vitals.attribution.js?module';
   onCLS(console.log);
@@ -35,10 +36,11 @@
 </script>
 
     </head>
-    <body class="site">
+      <body id="nightModeDiv"  class="site">
         {% include "notification.njk" %}
 
         {% include "header.njk" %}
+
         <main class="main">{{ content | safe }}</main>
         {% include "footer.njk" %}
 

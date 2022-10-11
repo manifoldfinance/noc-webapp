@@ -5,4 +5,19 @@
         </svg>
         {{ meta.title }}
     </a>
+    <br>
+    
+  <nav>
+  {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
+<!-- 
+    <div class="nav-list">
+      <p> <a href="/">...</a> 🆘 <a href="/alerts">Alerts</a> ℹ️ <a href="/updates">Updates</a> 📡 <a href="/feeds">Subscriptions</a> </p>
+        
+            <p></p>
+
+     
+    </div>
+    -->
+  </nav>
+
 </header>

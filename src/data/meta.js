@@ -6,7 +6,7 @@ const { META_TITLE, META_URL, META_DESC, META_LANG, META_COLOR, META_EMAIL, META
   process.env;
 
 module.exports = {
-  title: META_TITLE || 'Blockchain Alerts',
+  title: META_TITLE || 'InSights',
   url: META_URL || '',
   description: META_DESC || 'Blockchain Network Incident Alerts and Notification Service',
   lang: META_LANG || 'en',

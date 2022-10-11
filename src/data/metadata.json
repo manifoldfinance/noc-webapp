@@ -1,19 +1,19 @@
 {
-    "title": "SecureRpc",
-    "url": "https://securerpc.com",
-    "domain": "securerpc.com",
-    "description": "SecureRpc",
+    "title": "Manifold Finance InSights",
+    "url": "https://insights.manifoldfinance.com",
+    "domain": "manifoldfinance.com",
+    "description": "Manifold Finance nSights Feed",
     "genre": "Insert a schema.org genre",
     "sendWebVitals": false,
     "feed": {
-      "subtitle": "SecureRpc Status Feed",
+      "subtitle": "Manifold Finance Insights and Status Feed",
       "filename": "feed.xml",
       "path": "/feed/feed.xml",
-      "id": "https://securerpc.com"
+      "id": "https://manifoldfinance.com"
     },
     "jsonfeed": {
       "path": "/feed/feed.json",
-      "url": "https://securerpc.com/feed/feed.json"
+      "url": "https://manifoldfinance.com/feed/feed.json"
     },
     "author": {
       "name": "Manifold Finance",

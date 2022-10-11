@@ -9,6 +9,11 @@ const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const fs = require('fs');
 const path = require('path');
+const { exec, spawn } = require('node:child_process');
+const util = require('util');
+
+
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 //const ampPlugin = require('@ampproject/eleventy-plugin-amp');
 const filters = require('./eleventy/filters.js');
@@ -28,6 +33,7 @@ require('dotenv').config();
 //module.exports = function (eleventyConfig) {
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addFilter('encodeURIComponent', function (str) {
     return encodeURIComponent(str);
   });
@@ -89,6 +95,16 @@ module.exports = function (eleventyConfig) {
       parent: (/** @type {{ parent: any; }} */ data) => data.parent;
     }
   }
+  const git_hash = () => {
+    const rev = fs.readFileSync('.git/HEAD').toString().trim().split(/.*[: ]/).slice(-1)[0];
+    if (rev.indexOf('/') === -1) {
+        return rev;
+    } else {
+        return fs.readFileSync('.git/' + rev).toString().trim();
+    }
+
+}
+
   return {
     dir: {
       input: 'src',
@@ -101,5 +117,6 @@ module.exports = function (eleventyConfig) {
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
     passthroughFileCopy: true,
+    hash: git_hash,
   };
 };
